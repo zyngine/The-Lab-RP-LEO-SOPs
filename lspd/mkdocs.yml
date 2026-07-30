@@ -1,0 +1,45 @@
+site_name: LSPD Standard Operating Procedure
+site_description: Los Santos Police Department — internal procedure
+# After the first deploy, set this to the live URL.
+# site_url: https://YOURNAME.github.io/the-lab-lspd-sop/
+
+theme:
+  name: material
+  custom_dir: overrides
+  palette:
+    - scheme: slate
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+    - scheme: default
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+  features:
+    - navigation.top
+    - navigation.sections
+    - navigation.tracking
+    - search.suggest
+    - search.highlight
+    - toc.follow
+
+nav:
+  - Overview: index.md
+  - Chain of Command: chain-of-command.md
+  - General Conduct: conduct.md
+  - Patrol: patrol.md
+  - Use of Force: use-of-force.md
+  - Pursuits & PIT: pursuits.md
+  - Arrests & Radio: arrests.md
+  - Training & Discipline: discipline.md
+
+markdown_extensions:
+  - admonition
+  - tables
+  - attr_list
+  - md_in_html
+  - pymdownx.details
