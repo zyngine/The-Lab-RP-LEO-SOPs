@@ -1,0 +1,68 @@
+/* ==========================================================
+   The Lab — brand palette
+
+   Material's named colours get close but not exact. These are the
+   hex values from the logo, applied as CSS variables so every
+   component that uses the primary or accent colour picks them up
+   rather than needing individual overrides.
+   ========================================================== */
+
+:root {
+  --zc-cyan:  #22c3f0;
+  --zc-acid:  #7ed321;
+  --zc-void:  #05100c;
+  --zc-panel: #0b1a15;
+}
+
+/* Light scheme */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color:        var(--zc-cyan);
+  --md-primary-fg-color--light: #5ad2f5;
+  --md-primary-fg-color--dark:  #189cc2;
+  --md-accent-fg-color:         #5aa617;
+}
+
+/* Dark scheme. The background carries a green cast rather than being
+   neutral grey, so the header does not look bolted onto a stock theme. */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:        var(--zc-cyan);
+  --md-primary-fg-color--light: #5ad2f5;
+  --md-primary-fg-color--dark:  #189cc2;
+  --md-accent-fg-color:         var(--zc-acid);
+
+  --md-default-bg-color:        var(--zc-void);
+  --md-code-bg-color:           var(--zc-panel);
+  --md-footer-bg-color:         var(--zc-panel);
+}
+
+/* The header sits on the dark base rather than a slab of cyan, which
+   keeps long documents readable and lets the logo carry the colour. */
+[data-md-color-scheme="slate"] .md-header {
+  background-color: var(--zc-panel);
+  border-bottom: 2px solid var(--zc-acid);
+}
+[data-md-color-scheme="slate"] .md-tabs {
+  background-color: var(--zc-panel);
+}
+
+/* Links pick up the acid green, which reads against the dark base far
+   better than the default blue. */
+[data-md-color-scheme="slate"] .md-typeset a {
+  color: var(--zc-acid);
+}
+[data-md-color-scheme="slate"] .md-typeset a:hover {
+  color: var(--zc-cyan);
+}
+
+/* Give the logo room to breathe; the flask is detailed and gets muddy
+   at Material's default header size. */
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 30px;
+  width: auto;
+}
+
+/* Section headings in the brand cyan, so scanning a long SOP is easier. */
+[data-md-color-scheme="slate"] .md-typeset h2 {
+  color: var(--zc-cyan);
+}
