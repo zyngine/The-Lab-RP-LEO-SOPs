@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{#
+  This document is shared by link inside the Emergency Services Discord
+  and is not meant to be found. A noindex will not stop anyone who has
+  the URL, but it does stop the pursuit policy turning up in a search
+  for the server's name.
+#}
+{% block extrahead %}
+  <meta name="robots" content="noindex, nofollow">
+{% endblock %}
